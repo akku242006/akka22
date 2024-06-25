@@ -1,0 +1,47 @@
+import random
+
+def start_game():
+    print("Welcome to the Adventure Game!")
+    print("You find yourself in a mysterious land.")
+    print("Try to find your way out!\n")
+    player_name = input("Enter your name: ")
+    print(f"Hello, {player_name}! Let's begin.\n")
+    game_loop()
+
+def game_loop():
+    while True:
+        print("\nYou are in a dark forest.")
+        print("1. Go deeper into the forest.")
+        print("2. Climb a tree to get a better view.")
+        print("3. Rest for a while.")
+        print("4. Quit game.")
+        choice = input("Enter your choice (1/2/3/4): ")
+
+        if choice == '1':
+            explore_forest()
+        elif choice == '2':
+            climb_tree()
+        elif choice == '3':
+            rest()
+        elif choice == '4':
+            print("Quitting game. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+def explore_forest():
+    print("\nYou venture deeper into the forest...")
+    outcome = random.choice(["You discover a hidden path!", "You encounter a bear!", "You find a treasure chest!"])
+    print(outcome)
+
+def climb_tree():
+    print("\nYou climb a tree to get a better view...")
+    outcome = random.choice(["You spot a village nearby.", "You see a river flowing through the forest.", "You see a storm approaching."])
+    print(outcome)
+
+def rest():
+    print("\nYou decide to rest for a while...")
+    print("You feel refreshed!")
+
+# Start the game
+start_game()
